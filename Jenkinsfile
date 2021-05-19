@@ -14,11 +14,15 @@ node {
         sh "./gradlew api-test:test -Dlogging=${LOGGING}"
     }
 
+    stage("run ui tests") {
+        sh "./gradlew ui-test:test -Dlogging=${LOGGING}"
+    }
+
     allure([
         includeProperties: false,
         jdk: '',
         properties: [],
         reportBuildPolicy: 'ALWAYS',
-        results: [[path: 'api-test/build/allure-results']]
+        results: [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
     ])
 }

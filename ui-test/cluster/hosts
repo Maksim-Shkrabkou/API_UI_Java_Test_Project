@@ -1,0 +1,10 @@
+[all:vars]
+ansible_user=root
+ansible_python_interpreter=/usr/bin/python3
+
+[ggr]
+142.93.9.120
+
+[selenoid-nodes]
+157.230.218.146
+142.93.9.120
